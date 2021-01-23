@@ -17,7 +17,7 @@ class Pokemon
       INSERRT INTO pokemon (name, type)
       VALUES (?, ?)
     SQL
-    db[:conn].execute(sql, name, type)
+    db.execute(sql, name, type)
     #new_pokemon = self.new(name: name, type: type, db: db)
   
     #saved_pokemon = @db[:conn].execute("SELECT * FROM pokemon WHERE name = ?", name)
