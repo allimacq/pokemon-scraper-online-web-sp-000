@@ -16,7 +16,8 @@ class Pokemon
   
     #saved_pokemon = @db[:conn].execute("SELECT * FROM pokemon WHERE name = ?", name)
     #@db[:conn].execute(sql, self.name, self.type)
-    p @id = @db[:conn].execute("SELECT id FROM pokemon WHERE name = ?", name)
+    new_pokemon.id = @db[:conn].execute("SELECT id FROM pokemon WHERE name = ?", name)
+    p new_pokemon
   end
 
 end
