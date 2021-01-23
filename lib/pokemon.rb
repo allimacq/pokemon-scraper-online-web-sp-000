@@ -14,7 +14,7 @@ class Pokemon
     #@db = db
     
     sql = <<-SQL
-      INSERRT INTO pokemon (name, type)
+      INSERT INTO pokemon (name, type)
       VALUES (?, ?)
     SQL
     db.execute(sql, name, type)
