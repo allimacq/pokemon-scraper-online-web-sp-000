@@ -18,7 +18,7 @@ class Pokemon
     p type
     saved_pokemon = @db[:conn].execute("SELECT * FROM pokemon WHERE name = ?", name)
     #@db[:conn].execute(sql, self.name, self.type)
-    #@id = @db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+    p @id = @db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
 
 end
