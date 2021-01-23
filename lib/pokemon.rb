@@ -11,18 +11,17 @@ class Pokemon
   end
 
   def self.save(name, type, db)
-    #@db = db
-    
     sql = <<-SQL
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
     SQL
     db.execute(sql, name, type)
-    #new_pokemon = self.new(name: name, type: type, db: db)
+    @id = db.execute("SELECT id FROM pokemon WHERE name = ?", name)
+  end
   
-    #saved_pokemon = @db[:conn].execute("SELECT * FROM pokemon WHERE name = ?", name)
-    p @id = db.execute("SELECT id FROM pokemon WHERE name = ?", name)
-    
+  def self.find(id, db)
+    sql = "SELECT * FROM pokemon WHERE id = ?"
+    result = db.execute(sql, id)
   end
 
 end
