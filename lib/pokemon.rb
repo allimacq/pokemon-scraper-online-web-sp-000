@@ -16,6 +16,7 @@ class Pokemon
     @db = db
     sql = <<-SQL
       SELECT * FROM pokemon
+      WHERE name = ?
     SQL
      saved_pokemon = @db[:conn].execute("SELECT * FROM pokemon WHERE name = ?", name)
     saved_pokemon
