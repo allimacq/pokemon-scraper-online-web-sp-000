@@ -12,7 +12,7 @@ class Pokemon
 
 
   def self.save(name, type, db)
-    p new_pokemon = self.new(name: name, type: type, db: db)
+    new_pokemon = self.new(name: name, type: type, db: db)
   
     #saved_pokemon = @db[:conn].execute("SELECT * FROM pokemon WHERE name = ?", name)
     #@db[:conn].execute(sql, self.name, self.type)
